@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/div_tab_bar"
-        android:id="@+id/ly_content">
+        android:id="@+id/ly_content">   
 
     </FrameLayout>
 
