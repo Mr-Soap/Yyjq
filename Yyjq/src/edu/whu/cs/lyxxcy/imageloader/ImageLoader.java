@@ -1,4 +1,4 @@
-package com.whu.cs.lyxxcy.imageloader;
+package edu.whu.cs.lyxxcy.imageloader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,7 +56,7 @@ public class ImageLoader {
 	private Handler mPoolThreadHander;
 	private volatile Semaphore mSemaphore = new Semaphore(1);
 	/**
-	 * 引入�?个�?�为1的信号量，由于线程池内部也有�?个阻塞线程，防止加入任务的�?�度过快，使LIFO效果不明�?
+	 * 引入�?个�?�为1的信号量，由于线程池内部也有�?个阻塞线程，防止加入任务的�?�度过快，使LIFO效果不明�?
 	 */
 	private volatile Semaphore mPoolSemaphore;
 	/**
@@ -64,11 +64,11 @@ public class ImageLoader {
 	 */
 	private LinkedList<Runnable> mTasks;
 	/**
-	 * 队列的调度方�?
+	 * 队列的调度方�?
 	 */
 	private Type mType = Type.LIFO;
 	/**
-	 * 队列的调度方�?
+	 * 队列的调度方�?
 	 * 
 	 * @author zhy
 	 * 
@@ -170,10 +170,10 @@ public class ImageLoader {
 		Bitmap bitmap=null;
 		final String scheme = uri.getScheme();
 		/*
-		 * 根据不同的图片来源执行不同的步骤�?
-		 * 1.如果来源于本地文件，则文件缓存这步就不需�?
-		 * 2.如果是图片的Uri则直接从Thumbnail中获取bitmap，文件缓存和decodeFile这两步都不需�?
-		 * 3.如果来源于网络，则先�?查是否有文件缓存，根据结果再决定是否从网络下载，decodeFile也是必须�?
+		 * 根据不同的图片来源执行不同的步骤�?
+		 * 1.如果来源于本地文件，则文件缓存这步就不需�?
+		 * 2.如果是图片的Uri则直接从Thumbnail中获取bitmap，文件缓存和decodeFile这两步都不需�?
+		 * 3.如果来源于网络，则先�?查是否有文件缓存，根据结果再决定是否从网络下载，decodeFile也是必须�?
 		 */
 		if ( scheme == null || ContentResolver.SCHEME_FILE.equals( scheme ) ) {
 			bitmap = decodeFile(new File(url));
@@ -212,7 +212,7 @@ public class ImageLoader {
 	           return null;
 	        }			 
 		}
-		//截取正中间的正方形部�?
+		//截取正中间的正方形部�?
 		if(needCropSquareBitmap){
 			bitmap = Utils.createCropScaledBitmap(bitmap,requiredSize,requiredSize);
 		}
@@ -254,7 +254,7 @@ public class ImageLoader {
         return null;
     }
     
-    //直接从图库中获得数据�?
+    //直接从图库中获得数据�?
     private  Bitmap getCustomThumbnail(Uri uri,int size){
         try {
 	        InputStream input = mContext.getContentResolver().openInputStream(uri);
@@ -372,7 +372,7 @@ public class ImageLoader {
     }
     
 	/**
-	 * 取出�?个任�?
+	 * 取出�?个任�?
 	 * 
 	 * @return
 	 */
@@ -388,7 +388,7 @@ public class ImageLoader {
 		return null;
 	}
 	/**
-	 * 添加�?个任�?
+	 * 添加�?个任�?
 	 * 
 	 * @param runnable
 	 */

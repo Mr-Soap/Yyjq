@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="1dip"
 >
-	<com.example.staggeredgridviewdemo.views.ScaleImageView
+	<edu.whu.cs.lyxxcy.staggeredgridviewdemo.views.ScaleImageView
 	    android:id="@+id/imageView"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"

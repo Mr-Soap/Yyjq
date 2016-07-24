@@ -1,4 +1,4 @@
-package com.whu.cs.lyxxcy.imageloader;
+package edu.whu.cs.lyxxcy.imageloader;
 
 import java.util.Collections;
 import java.util.Iterator;

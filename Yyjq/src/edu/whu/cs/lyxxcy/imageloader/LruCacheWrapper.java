@@ -1,4 +1,4 @@
-package com.whu.cs.lyxxcy.imageloader;
+package edu.whu.cs.lyxxcy.imageloader;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;

@@ -2,9 +2,6 @@ package edu.whu.cs.lyxxcy.lib;
 
 import java.util.ArrayList;
 
-import com.example.staggeredgridviewdemo.views.ScaleImageView;
-import com.whu.cs.lyxxcy.imageloader.ImageLoader;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import edu.whu.cs.lyxxcy.imageloader.ImageLoader;
+import edu.whu.cs.lyxxcy.staggeredgridviewdemo.views.ScaleImageView;
 import edu.whu.cs.lyxxcy.yyjq.R;
 
 public class ImageGridAdapter extends BaseAdapter {
@@ -26,8 +25,8 @@ public class ImageGridAdapter extends BaseAdapter {
         mLoader.setIsUseMediaStoreThumbnails(false);
         mImageList = list;
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        int width = wm.getDefaultDisplay().getWidth();//ÆÁÄ»¿í¶È
-        mLoader.setRequiredSize(width / 3); //3±íÊ¾ÁÐÊý
+        int width = wm.getDefaultDisplay().getWidth();//ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+        mLoader.setRequiredSize(width / 3); //3ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
         mLayoutInflater = LayoutInflater.from(context);
 
     }
