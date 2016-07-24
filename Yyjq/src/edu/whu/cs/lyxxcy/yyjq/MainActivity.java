@@ -202,12 +202,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void addDB() {
-        ContentValues cv = new ContentValues();
-        cv.put(UserDB.ID, "5");
-        cv.put(UserDB.NAME, "xcy");
-        cv.put(UserDB.SIGN, "hahah");
-        dbWriter.insert(UserDB.TABLE_NAME, null, cv);
-        dbWriter.close();
+//        ContentValues cv = new ContentValues();
+//        cv.put(UserDB.ID, "5");
+//        cv.put(UserDB.NAME, "xcy");
+//        cv.put(UserDB.SIGN, "hahah");
+//        dbWriter.insert(UserDB.TABLE_NAME, null, cv);
+//        dbWriter.close();
     }
 
     public void queryMediaImages() {
