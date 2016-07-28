@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/android_layout_bg" >
+
+    <RelativeLayout
+        android:id="@+id/profile_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:background="@color/black" >
+
+        <TextView
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:text="@string/profile_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
+        
+        <Button
+            android:id="@+id/profile_login_button"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"  
+            android:layout_alignParentRight="true"         
+            android:layout_centerVertical="true"
+            android:layout_marginRight="85dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/profile_login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size" />
+
+        <Button
+            android:id="@+id/profile_more_button"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/profile_more"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profile_top_layout" >
+        
+         <ImageView
+            android:id="@+id/profile_background_image"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-100dp"
+            android:visibility="gone"
+            android:background="@drawable/my_profile_not_login_bg" />
+         
+          <com.lyxxcy.widgets.CustomScrollView
+            android:id="@+id/profile_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+             
+              
+			<LinearLayout 
+			    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="vertical"                
+			    >
+			    
+			   <!--  登录前   提示登录-->
+			   <LinearLayout
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                     >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/profile_welcome"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/medium_text_size" />
+
+                    <Button
+                        android:id="@+id/profile_login_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/my_profile_click_login"
+                        android:gravity="center"
+                        android:text="@string/profile_login"
+                        android:textColor="@color/login_button"
+                        android:textSize="@dimen/small_text_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+			   
+			 <!-- 登录后  显示个人信息 -->  
+			   	<RelativeLayout
+				        android:id="@+id/profile"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginTop="6dip"
+				        android:gravity="center_vertical"
+				        android:visibility="visible"				        
+				         >				
+				            
+				       <com.lyxxcy.lib.RoundImageView 
+						        android:id="@+id/profile_head"
+								android:layout_width="60dip"
+					            android:layout_height="60dip"
+					            android:layout_alignTop="@+id/profile"
+					            android:layout_alignBottom="@+id/profile"
+					            android:layout_centerVertical="true"
+					            android:layout_marginRight="0dip"
+					            android:layout_toRightOf="@+id/profile_head"
+					            android:scaleType="fitXY"
+					            android:src="@drawable/head"/>
+				            
+				
+				         <RelativeLayout
+				            android:layout_width="fill_parent"
+				            android:layout_height="wrap_content"
+				            android:layout_alignTop="@+id/profile"
+				            android:layout_alignBottom="@+id/profile"
+				            android:layout_centerVertical="true"
+				            android:layout_marginRight="0dip"
+				            android:layout_toRightOf="@+id/profile_head" >
+				
+				            <LinearLayout
+				                android:layout_width="fill_parent"
+				                android:layout_height="wrap_content"
+				                android:layout_margin="11dip"
+				                android:gravity="center_vertical"
+				                android:orientation="vertical" >
+				
+				                <TextView
+				                    android:id="@+id/username"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:ellipsize="end"
+				                    android:text="谢晨阳"
+				                    android:textColor="@color/black"
+				                     />
+				
+				                <TextView
+				                    android:id="@+id/profile_sign"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="这个人很懒，没有签名 "
+				                    android:textColor="@color/black" />
+				                
+				                <TextView
+				                    android:id="@+id/profile_gra"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="信用等级 : 0 "
+				                    android:textColor="@color/black" />
+				
+				                <TextView
+				                    android:id="@+id/profile_score"
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="信用积分  : 100"
+				                    android:textColor="@color/black" />
+				            </LinearLayout>
+				        </RelativeLayout>
+				        
+				        
+				    </RelativeLayout>
+    
+
+                  <LinearLayout style="@style/ProfileMainLayoutStyle" >
+
+                        <RelativeLayout style="@style/ProfileTopStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_01"
+                                style="@style/ProfileIconStyle"
+                                android:layout_width="36dp"
+                                android:layout_height="38dp"
+                                android:src="@drawable/profile_output" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_01"
+                                android:text="@string/profile_output" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+
+                        <View style="@style/ProfileLine" />
+
+                        <RelativeLayout style="@style/ProfileNormalStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_02"
+                                style="@style/ProfileIconStyle"
+                                android:src="@drawable/profile_input" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_02"
+                                android:text="@string/profile_input" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+
+                        <View style="@style/ProfileLine" />
+
+                        <RelativeLayout style="@style/ProfileBottomStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_03"
+                                style="@style/ProfileIconStyle"
+                                android:src="@drawable/profile_put" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_03"
+                                android:text="@string/profile_put" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+                        
+                        <View style="@style/ProfileLine" />
+                        
+                        <RelativeLayout style="@style/ProfileTopStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_04"
+                                style="@style/ProfileIconStyle"
+                                android:src="@drawable/profile_receive" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_04"
+                                android:text="@string/profile_receive" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+                        
+                    </LinearLayout> 
+                    
+                  <LinearLayout style="@style/ProfileMainLayoutStyle" >
+
+                        <RelativeLayout style="@style/ProfileTopStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_05"
+                                style="@style/ProfileIconStyle"
+                                android:layout_width="36dp"
+                                android:layout_height="38dp"
+                                android:src="@drawable/profile_comment" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_05"
+                                android:text="@string/profile_comment" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+
+                        <View style="@style/ProfileLine" />
+
+                        <RelativeLayout style="@style/ProfileNormalStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_06"
+                                style="@style/ProfileIconStyle"
+                                android:src="@drawable/profile_set" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_06"
+                                android:text="@string/profile_set" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+
+                        <View style="@style/ProfileLine" />
+
+                        <RelativeLayout style="@style/ProfileBottomStyle" >
+
+                            <ImageView
+                                android:id="@+id/profile_icon_07"
+                                style="@style/ProfileIconStyle"
+                                android:src="@drawable/profile_help" />
+
+                            <TextView
+                                style="@style/ProfileTextStyle"
+                                android:layout_toRightOf="@id/profile_icon_07"
+                                android:text="@string/profile_help" />
+
+                            <ImageView
+                                style="@style/ProfileRightIconStyle"
+                                android:src="@drawable/android_list_idex" />
+                        </RelativeLayout>
+                        
+                        
+                        
+                    </LinearLayout> 
+
+                    <View style="@style/ProfileLine" />
+                    
+                    
+                    
+                 <!--  *********************  用户中心 *************************** -->
+                    <LinearLayout style="@style/ProfileMainLayoutStyle" >
+                        
+		                        <Button
+			      				    android:id="@+id/profile_exit"
+			      				    android:layout_width="fill_parent"
+			      				    android:layout_height="match_parent"
+			      				    android:layout_marginBottom="14dp"
+			      				    android:layout_marginLeft="25dp"
+			      				    android:layout_marginRight="25dp"
+			      				    android:layout_marginTop="14dp"
+			      				    android:background="@color/black"
+			      				    android:gravity="center"
+			      				    android:padding="4dp"
+			      				    android:text="@string/profile_quit"
+			      				    android:textColor="@color/white"
+			      				    android:textSize="18sp" />
+                    </LinearLayout> 
+
+			</LinearLayout>
+          </com.lyxxcy.widgets.CustomScrollView>
+ 
+    </RelativeLayout>
+</RelativeLayout>
