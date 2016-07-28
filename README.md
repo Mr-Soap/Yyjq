@@ -8,4 +8,9 @@ An Android based task system for whu students.
 在"二手交易"部分加入了瀑布流;   
 抛弃了五个tab分别绑定五个xml布局文件的写法;   
 数据库字段的设计与写入;   
+2016-07-28   
+使用TabHost控制Tab页的切换;   
+用户数据库写入完毕;   
+实现了登陆+注册加登陆验证的功能;   
+实现了个人信息部分的布局; 
 
