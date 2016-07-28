@@ -36,7 +36,7 @@
                 android:id="@+id/btn_exchange"
 				style="@style/home_tab_bottom"
             	android:background="@drawable/tab_menu_exchange"
-                />
+                android:checked="true"/>
 
             <RadioButton
 	            android:id="@+id/btn_task"
@@ -47,7 +47,7 @@
                	android:id="@+id/btn_publish"
 	            android:background="@drawable/tab_menu_publish"
 	            style="@style/home_tab_bottom"
-	            android:checked="true" />
+	             />
 
             <RadioButton
                 android:id="@+id/btn_message"

@@ -35,10 +35,12 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        >
         <activity
             android:name=".LogActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,6 +81,8 @@
             android:name="com.lyxxcy.ui.TaskActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme" />
+        
+        <activity android:name=".SelectPicPopupWindow" android:theme="@style/MyDialogStyleBottom" /> 
         
         <provider
             android:name="com.lyxxcy.db.ExchangeProvider"

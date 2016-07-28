@@ -12,5 +12,8 @@ An Android based task system for whu students.
 使用TabHost控制Tab页的切换;   
 用户数据库写入完毕;   
 实现了登陆+注册加登陆验证的功能;   
-实现了个人信息部分的布局; 
+实现了个人信息部分的布局;    
+实现了publish按钮点击向上滑出选择界面的效果；   
+去除了顶部边框；   
+
 

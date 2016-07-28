@@ -13,6 +13,11 @@ import android.app.TabActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.WindowManager;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
@@ -32,10 +37,12 @@ public class HomeActivity extends TabActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//    	getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         AppManager.getInstance().addActivity(this);
+        
         setContentView(R.layout.activity_main);
-
+        
         Intent intent = this.getIntent();
         user = (UserInfo) intent.getSerializableExtra("user");
 
@@ -82,8 +89,18 @@ public class HomeActivity extends TabActivity {
         mTabHost.addTab(mTabHost.newTabSpec(TAB_MESSAGE).setIndicator(TAB_MESSAGE).setContent(i_message));
         mTabHost.addTab(mTabHost.newTabSpec(TAB_PROFILE).setIndicator(TAB_PROFILE).setContent(i_profile));
 
-        mTabHost.setCurrentTabByTag(TAB_PUBLISH);
-
+        mTabHost.setCurrentTabByTag(TAB_EXCHANGE);
+        
+        RadioButton publish = (RadioButton) findViewById(R.id.btn_publish);
+        
+        //点击向上滑出选择界面
+        publish.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new Intent(HomeActivity.this,SelectPicPopupWindow.class));  
+                mTabHost.setCurrentTabByTag(TAB_PUBLISH);
+			}
+		});
+        
         mTabButtonGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
@@ -96,7 +113,8 @@ public class HomeActivity extends TabActivity {
                         break;
 
                     case R.id.btn_publish:
-                        mTabHost.setCurrentTabByTag(TAB_PUBLISH);
+//                    	startActivity(new Intent(HomeActivity.this,SelectPicPopupWindow.class));  
+//                      mTabHost.setCurrentTabByTag(TAB_PUBLISH);
                         break;
 
                     case R.id.btn_message:

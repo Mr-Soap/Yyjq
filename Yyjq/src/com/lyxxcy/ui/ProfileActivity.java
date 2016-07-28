@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,6 +33,7 @@ public class ProfileActivity extends BaseActivity implements OnClickListener {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       
         AppManager.getInstance().addActivity(this);
         setContentView(R.layout.activity_profile);
         Intent intent = this.getIntent();

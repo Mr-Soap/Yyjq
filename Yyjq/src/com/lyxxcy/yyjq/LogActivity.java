@@ -21,6 +21,8 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -70,10 +72,6 @@ public class LogActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //  requestWindowFeature(Window.FEATURE_NO_TITLE);      
-        //  //不显示系统的标题栏          
-        //  getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        //       WindowManager.LayoutParams.FLAG_FULLSCREEN );
         AppManager.getInstance().addActivity(this);
         setContentView(R.layout.activity_login);
         context = LogActivity.this;
